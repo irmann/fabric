@@ -113,8 +113,9 @@ func findSource(gopath, pkg string) (SourceMap, error) {
 			}
 
 			// Do not import any other directories into chaincode code package
-			logger.Debugf("skipping dir: %s", path)
-			return filepath.SkipDir
+			logger.Debugf("no skipping dir: %s", path)
+			//return filepath.SkipDir
+			return nil
 		}
 
 		ext := filepath.Ext(path)
